@@ -24,7 +24,8 @@ setwd("~/Desktop/0. Studies/Coursera/DataScienceSpecialization/Exploratory Data 
 
 ############# Reading data from text file #################
 
-mydata <- read.table("household_power_consumption.txt", header = TRUE, sep=";", na.strings = "?")
+mydata <- read.table("household_power_consumption.txt", header = TRUE, sep=";", na.strings = "?", 
+                     stringsAsFactors=FALSE, dec=".")
 
 #if na.strings is not defined, values will be read wrong.
 
@@ -59,18 +60,17 @@ SpecificDaysData<- mydata[SpecificDaysData,]
 
 ############### Make the final plot ###############
 
-
-
-
-## divide the graph into 4 
-
 ##initialize PNG image
-png (file="plot4.png", height=480, width=480)
+png (file="plot4.png", height=480, width=480, units = "px")
+
 
 ##to control background color
 par(bg = "transparent")
 
 par (mfrow = c(2,2))
+## divide the graph into 4 
+
+#par (mar = c(4,4,2,2))
 
 ##################### First Plot
 
@@ -117,8 +117,7 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_
 ##################### Fourth Plot
 
 plot(SpecificDaysData$Datetime, as.numeric(SpecificDaysData$Global_reactive_power), 
-     type = "l", main = "", xlab = "datetime", ylab = "Global_reactive_power",
-     lwd = 1)
+     main = "", xlab = "datetime", ylab = "Global_reactive_power", type = "l")
 
 #####################
 
