@@ -66,7 +66,8 @@ SpecificDaysData<- mydata[SpecificDaysData,]
 png (file="plot1.png", height=480, width=480)
 
 ##to control background color
-par(bg = "transparent")
+par(bg = "white")
+##could also be set to "transparent"
 
 hist(as.numeric(SpecificDaysData$Global_active_power), 
      main = "Global Active Power",xlab = "Global Active Power (kilowatts)",

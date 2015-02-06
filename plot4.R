@@ -14,7 +14,6 @@
 ########################################################
 
 
-
 ############### Setting Work Directory ########################
 
 setwd("~/Desktop/0. Studies/Coursera/DataScienceSpecialization/Exploratory Data Analysis/Project 1/ExData_Plotting1")
@@ -65,7 +64,8 @@ png (file="plot4.png", height=480, width=480, units = "px")
 
 
 ##to control background color
-par(bg = "transparent")
+par(bg = "white")
+##could also be set to "transparent"
 
 par (mfrow = c(2,2))
 ## divide the graph into 4 
@@ -117,13 +117,19 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_
 ##################### Fourth Plot
 
 plot(SpecificDaysData$Datetime, as.numeric(SpecificDaysData$Global_reactive_power), 
-     main = "", xlab = "datetime", ylab = "Global_reactive_power", type = "l")
+     main = "", xlab = "datetime", ylab = "Global_reactive_power", 
+     type = "l", lwd = 1, col = "black")
 
 
 ## NOTE: the bottom right plot (fourth) does not "exactly" match the figure provided, specifically the line thickness/color.
-## This is mainly due to the quality of my specific PNG graphics device, where some lines are a bit thicker/darker
-## than others. I had no control over this.
+## even if I declared the line width to be = 1 (smallest possible), and color to be black.
+## This is mainly due to my specific PNG graphics device, where some lines are a bit thicker/darker
+## than others due to aliasing. 
+## They say it is due to the Windows Operating System and the PNG Graphics Device.
+## I had no control over this, refer to the discussion forums. 
 
+#Refer to the following link regarding this issue: 
+# https://class.coursera.org/exdata-011/forum/thread?thread_id=40
 #####################
 
 

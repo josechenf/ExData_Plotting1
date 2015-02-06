@@ -64,7 +64,8 @@ SpecificDaysData<- mydata[SpecificDaysData,]
 png (file="plot2.png", height=480, width=480)
 
 ##to control background color
-par(bg = "transparent")
+par(bg = "white")
+##could also be set to "transparent"
 
 plot(SpecificDaysData$Datetime, as.numeric(SpecificDaysData$Global_active_power), 
      type = "l", main = "", xlab = "", ylab = "Global Active Power (kilowatts)")

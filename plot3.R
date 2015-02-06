@@ -64,7 +64,8 @@ SpecificDaysData<- mydata[SpecificDaysData,]
 png (file="plot3.png", height=480, width=480)
 
 ##to control background color
-par(bg = "transparent")
+par(bg = "white")
+##could also be set to "transparent"
 
 plot(SpecificDaysData$Datetime, as.numeric(SpecificDaysData$Sub_metering_1), 
      type = "n", main = "", xlab = "", ylab = "Energy sub metering", bg = "white")
