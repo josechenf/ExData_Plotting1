@@ -120,7 +120,7 @@ plot(SpecificDaysData$Datetime, as.numeric(SpecificDaysData$Global_reactive_powe
      main = "", xlab = "datetime", ylab = "Global_reactive_power", type = "l")
 
 
-## NOTE: the bottom right does not "exactly" match the figure provided, specifically the line thickness.
+## NOTE: the bottom right plot (fourth) does not "exactly" match the figure provided, specifically the line thickness/color.
 ## This is mainly due to the quality of my specific PNG graphics device, where some lines are a bit thicker/darker
 ## than others. I had no control over this.
 
